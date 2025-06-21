@@ -1,0 +1,7 @@
+{
+  "name": "toDoList",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
