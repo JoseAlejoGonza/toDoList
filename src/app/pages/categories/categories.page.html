@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categorías</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-input [(ngModel)]="newCategory" placeholder="Nueva categoría"></ion-input>
+    <ion-button size="medium" (click)="addCategory()">Agregar</ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let cat of categories">
+      <div *ngIf="editingCategory?.id !== cat.id; else editTemplate" class="w-full flex justify-between items-center">
+        <ion-label>{{ cat.name }}</ion-label>
+        <div class="flex gap-2">
+          <ion-button size="medium" (click)="editCategory(cat)">Editar</ion-button>
+          <ion-button color="danger" size="medium" (click)="confirmDelete(cat)">Eliminar</ion-button>
+        </div>
+      </div>
+
+      <ng-template #editTemplate>
+        <ng-container *ngIf="editingCategory">
+          <ion-input [(ngModel)]="editingCategory.name"></ion-input>
+          <ion-button (click)="saveEdit()">Guardar</ion-button>
+          <ion-button (click)="cancelEdit()">Cancelar</ion-button>
+        </ng-container>
+      </ng-template>
+    </ion-item>
+  </ion-list>
+
+  <ion-button size="large" expand="block" (click)="goToTasks()">Volver a Tareas</ion-button>
+</ion-content>

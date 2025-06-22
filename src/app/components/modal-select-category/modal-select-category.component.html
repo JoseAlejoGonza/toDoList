@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar Categoría</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item button (click)="select(null)">Sin categoría</ion-item>
+    <ion-item *ngFor="let cat of categories" button (click)="select(cat.id)">
+      {{ cat.name }}
+    </ion-item>
+  </ion-list>
+</ion-content>

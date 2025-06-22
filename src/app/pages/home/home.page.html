@@ -1,0 +1,21 @@
+<ion-header><ion-toolbar><ion-title>To-Do List</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-select [(ngModel)]="selectedCategoryId" (ionChange)="filterByCategory(selectedCategoryId)">
+    <ion-select-option [value]="-1">Todas las tareas</ion-select-option>
+    <ion-select-option [value]="null">Sin categoría</ion-select-option>
+    <ion-select-option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</ion-select-option>
+  </ion-select>
+
+  <ion-item *ngFor="let task of filteredTasks">
+    <ion-checkbox slot="start" [checked]="task.completed" (ionChange)="toggleComplete(task)"></ion-checkbox>
+    <ion-label [class.completed]="task.completed">{{ task.title }}</ion-label>
+    <ion-button fill="clear" color="danger" size="medium" slot="end" (click)="deleteTask(task.id)">Eliminar</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="newTask" placeholder="Nueva tarea"></ion-input>
+    <ion-button size="medium" (click)="addTask()">Agregar</ion-button>
+  </ion-item>
+
+  <ion-button size="large" expand="block" (click)="goToCategories()">Administrar Categorías</ion-button>
+</ion-content>
