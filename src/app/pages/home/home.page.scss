@@ -1,3 +1,10 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/flex-utils.css";
 #container {
   text-align: center;
 
@@ -24,4 +31,17 @@
 
 #container a {
   text-decoration: none;
+}
+ion-button {
+  --background: #0054e9;
+  --color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.button-categories{
+  background-color: red !important;
+  color: rgb(241, 241, 241);
+  padding: 2vw;
+  border-radius: 10px;
+  font-size: 24px;
 }

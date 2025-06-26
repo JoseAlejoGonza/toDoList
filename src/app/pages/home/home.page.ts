@@ -29,6 +29,11 @@ export class HomePage implements OnInit {
     private alertController: AlertController
   ) {}
 
+  ngAfterViewInit() {
+    const btn = document.querySelector('ion-button');
+    console.log('Ion button is', btn?.shadowRoot ? 'shadowed' : 'not shadowed');
+  }
+
   ngOnInit() {
     this.loadData();
   }
