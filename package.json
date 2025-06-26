@@ -10,6 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "build-prod-capacitor": "ionic capacitor build android --prod",
     "build-dev-capacitor": "ionic capacitor build android --dev",
+    "build-prod-capacitor-ios": "ionic capacitor build ios --prod",
+    "build-dev-capacitor-ios": "ionic capacitor build ios --dev",
     "test": "ng test",
     "lint": "ng lint"
   },
